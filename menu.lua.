@@ -1,0 +1,30 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "PurpleMenu"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 220, 0, 150)
+frame.Position = UDim2.new(0.5, -110, 0.5, -75)
+frame.BackgroundColor3 = Color3.fromRGB(90, 30, 150)
+frame.Parent = gui
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 40)
+title.Text = "PURPLE MENU"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.Parent = frame
+
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 180, 0, 45)
+button.Position = UDim2.new(0, 20, 0, 70)
+button.Text = "Fechar menu"
+button.Parent = frame
+
+button.MouseButton1Click:Connect(function()
+    frame.Visible = not frame.Visible
+end)
